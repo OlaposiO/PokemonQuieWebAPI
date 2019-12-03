@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PokeQuizWebAPI.Models.QuizModels;
 using PokeQuizWebAPI.PokemonServices;
 
 namespace PokeQuizWebAPI.Controllers
@@ -17,6 +18,17 @@ namespace PokeQuizWebAPI.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult SelectQuizDifficulty()
+        {
+            var viewModel = new QuizDifficultyViewModel();
+            return View(viewModel);
+        }
+
+        public IActionResult QuizView(QuizDifficultyViewModel userEnteredQuestion) //feeding into eds
         {
             return View();
         }

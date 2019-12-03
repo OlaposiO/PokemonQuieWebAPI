@@ -1,0 +1,20 @@
+﻿@model PokeQuizWebAPI.Models.QuizModels.QuizDifficultyViewModel
+@{
+    ViewData["Title"] = "SelectQuizDifficulty";
+}
+
+<h1>Select How Many Questions You Want To Answer</h1>
+
+<div class="dropdown">
+  <form asp-controller="Quiz" asp-action="QuizView"> 
+      <div class="form-group">
+          <select asp-for="@Model.SelectedNumberOfQuestions">
+              @foreach(var number in Model.AmountOfQuestions)
+              {
+                  <option value="@number">@number</option>
+              }
+          </select>
+          <input type ="submit" value="Submit" class="btn btn-primary"/>
+      </div>
+  </form>
+</div>
